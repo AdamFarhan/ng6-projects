@@ -1,0 +1,14 @@
+.msg {
+    padding: 5px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.msg_warning {
+    background-color: coral;
+    color: white;
+}
+.msg_success {
+    background-color: lightgreen;
+    color: black;
+}
