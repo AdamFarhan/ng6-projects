@@ -10,6 +10,7 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipeListComponent implements OnInit {
   //create an array of Recipe objects
+  //(name, description, imagePath)
   recipes: Recipe[] = [
     new Recipe("A Test Recipe", "This is simply a test", "https://api.norecipes.com/wp-content/uploads/2018/08/teriyaki-chicken-recipe_007.jpg")
   ];
@@ -17,5 +18,4 @@ export class RecipeListComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
