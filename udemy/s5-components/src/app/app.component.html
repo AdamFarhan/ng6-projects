@@ -5,9 +5,16 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change first element</button>
       <app-server-element
        *ngFor="let e of serverElements"
-       [element]="e"></app-server-element>
+       [element]="e"
+       [name]="e.name">
+        <p #contentParagraph>
+          <strong *ngIf="e.type === 'server'" style="color: red">{{ e.content }}</strong>
+          <em *ngIf="e.type === 'blueprint'">{{ e.content }}</em>
+        </p>
+      </app-server-element>
     </div>
   </div>
 </div>
