@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  listOfEvens = [];
+  listOfOdds = [];
+  parseNumber(e: {newNumber: number}){
+    if(e.newNumber % 2 == 0){
+      this.listOfEvens.push(e.newNumber);
+    }else{
+      this.listOfOdds.push(e.newNumber);
+    }
+  }
 }

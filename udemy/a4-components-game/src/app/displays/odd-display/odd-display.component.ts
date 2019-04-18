@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-odd-display',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./odd-display.component.css']
 })
 export class OddDisplayComponent implements OnInit {
-
+  @Input() num:number;
   constructor() { }
 
   ngOnInit() {
