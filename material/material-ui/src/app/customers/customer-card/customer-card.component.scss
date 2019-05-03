@@ -1,0 +1,17 @@
+.mat-card{
+    max-width: 300px;
+    margin: auto;
+}
+
+.mat-card-avatar{
+    background-image: url('/assets/img/cat.jpg');
+    background-size: cover;
+}
+
+.mat-card-actions{
+    display: flex;
+    .flex-spacer{
+        // width: 100%;
+        flex: 1 1 auto;
+    }
+}
