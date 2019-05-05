@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Task } from '../task.model';
+import { ListService } from '../list.service';
 
 @Component({
   selector: 'app-list-input',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-input.component.scss']
 })
 export class ListInputComponent implements OnInit {
+  @Input() editTask: Task;
+  newTaskName: string;
 
-  constructor() { }
+  constructor(private listService: ListService) { }
 
   ngOnInit() {
+    this.newTaskName = this.editTask.name
   }
 
+  saveInput(){
+    this.editTask.name = this.newTaskName;
+    this.listService.updateTask(this.editTask.id, this.editTask);
+  }
 }

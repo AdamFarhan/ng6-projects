@@ -1,3 +1,18 @@
 table {
   width: 100%;
 }
+
+.mat-card{
+  margin-top: 20px;
+}
+
+.task-completed{
+  text-decoration: line-through;
+}
+
+
+
+.input-wrapper { 
+  overflow:hidden;
+  max-height: 75px;
+}

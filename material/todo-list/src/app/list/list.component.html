@@ -1,26 +1,56 @@
 <div class="container">
-  <app-list-input></app-list-input>
-  <table mat-table [dataSource]="taskList" color="secondary">
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef>Id </th>
-      <td mat-cell *matCellDef="let item"> {{item.id}} </td>
-    </ng-container>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        Adam's Todo List
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="card-container">
+        <div class="input-wrapper" *ngIf="isInput" @slideInOut>
+          <app-list-input
+          [editTask]="inputTask"
+          ></app-list-input>
+        </div>
+        <mat-selection-list>
+          <mat-list-option
+            *ngFor="let task of taskList; index as i"
+            (click)="toggleTask(task.id)"
+            [ngClass]="{'task-completed': task.isDone}"
+            >
+            <!-- <mat-icon matListIcon>folder</mat-icon> -->
+            <button mat-icon-button matListAvatar (click)="editTask(task, $event)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            {{task.name}}
+          </mat-list-option>
+        </mat-selection-list>
+        <!-- <table mat-table [dataSource]="taskList" color="secondary">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Id </th>
+            <td mat-cell *matCellDef="let item"> {{item.id}} </td>
+          </ng-container>
 
-    
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let item"> {{item.name}} </td>
-    </ng-container>
 
-    
-    <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef> Date </th>
-      <td mat-cell *matCellDef="let item"> {{item.date}} </td>
-    </ng-container>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let item"> {{item.name}} </td>
+          </ng-container>
 
 
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let item"> {{item.date}} </td>
+          </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table> -->
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+
 </div>

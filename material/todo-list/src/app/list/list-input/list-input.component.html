@@ -1,3 +1,8 @@
-<p>
-  list-input works!
-</p>
+<div class="list-input-container">
+  <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+  <mat-form-field>
+    <input matInput placeholder="Title" color="accent" [(ngModel)]="newTaskName" />
+  </mat-form-field>
+  <button mat-raised-button color="primary"
+    (click)="saveInput()">Save</button>
+</div>
