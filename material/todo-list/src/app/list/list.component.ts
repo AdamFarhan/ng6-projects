@@ -36,6 +36,8 @@ export class ListComponent implements OnInit {
   taskList: Task[];
   isInput: Boolean = false;
   inputTask: Task;
+  //the input component works for both 
+  inputType: string;
   constructor(private listService: ListService) { }
 
   ngOnInit() {
@@ -52,6 +54,10 @@ export class ListComponent implements OnInit {
 
   toggleTask(id: number){
     this.listService.toggleTaskComplete(id);
+  }
+
+  addTask(){
+
   }
 
   editTask(editTask: Task, $e){
